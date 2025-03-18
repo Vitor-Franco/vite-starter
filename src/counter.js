@@ -7,6 +7,12 @@ export const initializeCounter = (doc = globalThis.document) => {
 
   const render = () => {
     countElement.textContent = count;
+
+    if (count < 0) {
+      import('./banner.js').then(({ showBanner }) => {
+        showBanner(`We're in counter negative ://`);
+      });
+    }
   };
 
   const increment = () => {
