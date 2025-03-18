@@ -1,6 +1,8 @@
 import('./style.css');
 
 import styles from './counter.module.css';
+// import './sass-file.scss';
+// import './postcss.css';
 
 export const initializeCounter = (doc = globalThis.document) => {
   const countElement = doc.getElementById('count');
