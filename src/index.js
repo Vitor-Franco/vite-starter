@@ -5,6 +5,8 @@ import imageTooled from './steve-after-a-workshop.jpg?h=400&format=webp';
 
 console.log(import.meta.env);
 
+import { name } from './characters/gandorf.json';
+
 import('./counter').then(({ initializeCounter }) => {
   initializeCounter();
 });
