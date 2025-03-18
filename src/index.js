@@ -1,12 +1,19 @@
-// import { initializeCounter } from './counter';
-import image from './steve-after-a-workshop.jpg';
-import favicon from './favicon-16x16.png';
-import imageTooled from './steve-after-a-workshop.jpg?h=400&format=webp';
+// const svgModules = import.meta.glob('./logos/**/*.svg');
+// const svgImages = Object.values(svgModules).map(async (module) => module());
 
-console.log(import.meta.env);
+// for await (const image of svgImages) {
+//   const img = document.createElement('img');
+//   img.src = image.default;
+//   img.height = 120;
+//   document.body.appendChild(img);
+// }
 
-import { name } from './characters/gandorf.json';
-
-import('./counter').then(({ initializeCounter }) => {
-  initializeCounter();
-});
+const images = Object.values(
+  import.meta.glob('./logos/**/*.svg', { eager: true }),
+);
+for (const image of images) {
+  const img = document.createElement('img');
+  img.src = image.default;
+  img.height = 120;
+  document.body.appendChild(img);
+}
